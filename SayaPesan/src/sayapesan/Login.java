@@ -6,7 +6,7 @@
 package sayapesan;
 
 import javax.swing.JOptionPane;
-
+import Kantin.*;
 /**
  *
  * @author Cerberus
@@ -111,6 +111,7 @@ public class Login extends javax.swing.JFrame {
         
       if(User.equals("Kantin")&&Pass.equals("kantin")){
           JOptionPane.showMessageDialog(null, "Login succsesfully as Kantin");
+          new KantinMenu().setVisible(true);
           dispose();
       } else{
           JOptionPane.showMessageDialog(null, "Login Gagal");
