@@ -28,31 +28,78 @@ public class KantinMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        InputMe = new javax.swing.JButton();
+        SellReports = new javax.swing.JButton();
+        OrderDetails = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        InputMe.setText("Input Menu");
+        InputMe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                InputMeActionPerformed(evt);
+            }
+        });
+
+        SellReports.setText("Selling Report");
+        SellReports.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SellReportsActionPerformed(evt);
+            }
+        });
+
+        OrderDetails.setText("Orders");
+        OrderDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OrderDetailsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(jLabel1)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(SellReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(InputMe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(OrderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jLabel1)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addGap(73, 73, 73)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InputMe, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(OrderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(SellReports, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(132, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void InputMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputMeActionPerformed
+        // TODO add your handling code here:
+        new InputMenu().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_InputMeActionPerformed
+
+    private void OrderDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderDetailsActionPerformed
+        // TODO add your handling code here:
+        new OrderDetails().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_OrderDetailsActionPerformed
+
+    private void SellReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SellReportsActionPerformed
+        // TODO add your handling code here:
+        new SellingReport().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_SellReportsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +137,8 @@ public class KantinMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton InputMe;
+    private javax.swing.JButton OrderDetails;
+    private javax.swing.JButton SellReports;
     // End of variables declaration//GEN-END:variables
 }
