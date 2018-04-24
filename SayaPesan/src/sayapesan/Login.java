@@ -5,20 +5,34 @@
  */
 package sayapesan;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
+import Koneksi.*;
 import Kantin.*;
+
 /**
  *
  * @author Cerberus
  */
 public class Login extends javax.swing.JFrame {
-
+    Connection con = null;
+    Statement stmt = null;
+    ResultSet rs;
+    String sql;
     /**
      * Creates new form Login
      */
     public Login() {
         initComponents();
         setLocationRelativeTo(null);
+        config DB = new config();
+        DB.config();
+        con = DB.con;
+        stmt = DB.stmt;
+        
+        
     }
 
     /**
@@ -59,6 +73,11 @@ public class Login extends javax.swing.JFrame {
         });
 
         CancelBut.setText("Cancel");
+        CancelBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelButActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,20 +125,32 @@ public class Login extends javax.swing.JFrame {
 
     private void LogButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogButActionPerformed
         // TODO add your handling code here:
-        String User = UserForm.getText();
-        String Pass = PassForm.getText();
-        
-      if(User.equals("Kantin")&&Pass.equals("kantin")){
-          JOptionPane.showMessageDialog(null, "Login succsesfully as Kantin");
-          new KantinMenu().setVisible(true);
-          dispose();
-      } else{
-          JOptionPane.showMessageDialog(null, "Login Gagal");
-          UserForm.setText("");
-          PassForm.setText("");
-          dispose();
-      }
+        String username;
+        String password;
+        username = UserForm.getText();
+        password = PassForm.getText();
+        try{
+            sql =   "SELECT * FROM user WHERE username='"+username+"' AND password='"+password+"'";
+            rs = stmt.executeQuery(sql);
+            if(rs.next()){
+                if(username.equals(rs.getString("username"))&& password.equals(rs.getString("password"))){
+                    JOptionPane.showMessageDialog(null, "Login Berhasil");
+                    this.dispose();
+                    new KantinMenu().setVisible(true);
+                    
+                }else{
+                    JOptionPane.showMessageDialog(null,"Username dan Passoword Salah");
+                }
+            }
+        }catch (Exception e){
+                    JOptionPane.showMessageDialog(this, e.getMessage());
+                    }
     }//GEN-LAST:event_LogButActionPerformed
+
+    private void CancelButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelButActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_CancelButActionPerformed
 
     /**
      * @param args the command line arguments

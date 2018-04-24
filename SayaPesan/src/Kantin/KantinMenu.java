@@ -30,7 +30,7 @@ public class KantinMenu extends javax.swing.JFrame {
 
         InputMe = new javax.swing.JButton();
         SellReports = new javax.swing.JButton();
-        OrderDetails = new javax.swing.JButton();
+        Orders = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,10 +48,10 @@ public class KantinMenu extends javax.swing.JFrame {
             }
         });
 
-        OrderDetails.setText("Orders");
-        OrderDetails.addActionListener(new java.awt.event.ActionListener() {
+        Orders.setText("Orders");
+        Orders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrderDetailsActionPerformed(evt);
+                OrdersActionPerformed(evt);
             }
         });
 
@@ -65,7 +65,7 @@ public class KantinMenu extends javax.swing.JFrame {
                     .addComponent(SellReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(InputMe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(OrderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -74,7 +74,7 @@ public class KantinMenu extends javax.swing.JFrame {
                 .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(InputMe, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(OrderDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(SellReports, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(132, Short.MAX_VALUE))
@@ -89,11 +89,11 @@ public class KantinMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_InputMeActionPerformed
 
-    private void OrderDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrderDetailsActionPerformed
+    private void OrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersActionPerformed
         // TODO add your handling code here:
         new OrderDetails().setVisible(true);
         dispose();
-    }//GEN-LAST:event_OrderDetailsActionPerformed
+    }//GEN-LAST:event_OrdersActionPerformed
 
     private void SellReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SellReportsActionPerformed
         // TODO add your handling code here:
@@ -138,7 +138,7 @@ public class KantinMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton InputMe;
-    private javax.swing.JButton OrderDetails;
+    private javax.swing.JButton Orders;
     private javax.swing.JButton SellReports;
     // End of variables declaration//GEN-END:variables
 }

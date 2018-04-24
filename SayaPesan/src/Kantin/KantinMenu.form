@@ -30,7 +30,7 @@
                   <Component id="InputMe" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="OrderDetails" min="-2" pref="99" max="-2" attributes="0"/>
+              <Component id="Orders" min="-2" pref="99" max="-2" attributes="0"/>
               <EmptySpace pref="38" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -41,7 +41,7 @@
               <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="InputMe" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
-                  <Component id="OrderDetails" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
+                  <Component id="Orders" alignment="3" min="-2" pref="42" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="SellReports" min="-2" pref="42" max="-2" attributes="0"/>
@@ -67,12 +67,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SellReportsActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="OrderDetails">
+    <Component class="javax.swing.JButton" name="Orders">
       <Properties>
         <Property name="text" type="java.lang.String" value="Orders"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OrderDetailsActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="OrdersActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
