@@ -4,64 +4,70 @@
  * and open the template in the editor.
  */
 package Kantin;
+import Entity.Menu;
 import Koneksi.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import sayapesan.Login;
+
 
 /**
  *
  * @author Cerberus
  */
 public class InputMenu extends javax.swing.JFrame {
-    String sql;
-    Connection con = null;
-    PreparedStatement pst = null;
-    ResultSet res = null;
-    Statement stmt = null;
-    /**
-     * Creates new form InputMenu
-     */
+    int value;
+    int idmenu;
+    String a,b,c;
+    MenuCon menu = new MenuCon();
+    List<Menu> data=new ArrayList<>();
+        
+    public InputMenu(int value){
+       initComponents();
+       this.value=value;
+       load_table();
+    }
+ 
     
-    private void load_table(String query){
+    private void load_table(){
+        //hapusIsiTable();
         DefaultTableModel model = new DefaultTableModel();
         model.addColumn("Id Menu");
         model.addColumn("Nama Menu");
         model.addColumn("Harga Menu");
         model.addColumn("Jenis Menu");
-        
-        try{
-             //sql = "SELECT * FROM menu";
-             stmt = con.createStatement();
-             res = stmt.executeQuery(query);
-             while(res.next()){
-                 model.addRow(new Object[]{res.getString(1),res.getString(2),res.getString(3),res.getString(4)});
-             }
-             tabelmenu.setModel(model);
-        } catch(Exception e){
-            
-        } 
-        
-        
+        tabelmenu.setModel(model);
+ 
+        data = menu.showData(value);
+        for (int i = 0; i < data.size(); i++) {
+            Object[] ob = new Object[4];
+            ob[0] = data.get(i).getidmenu();
+            ob[1] = data.get(i).getNamaMenu();
+            ob[2] = data.get(i).getHargaMenu();
+            ob[3] = data.get(i).getJenisMenu();
+            model.addRow(ob);
+        }   
     }
+    
     
     private void hapus(){
         namamenu.setText(null);
         hargamenu.setText(null);
         jenismenu.setSelectedItem(this);
-        cariform.setText(null);
+      
     }
     
     public InputMenu() {
-        initComponents();
-        config DB = new config();
-        DB.config();
-        con = DB.con;
-        load_table("SELECT * FROM menu");
+        initComponents();  
+        load_table();
         hapus();
         
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -82,16 +88,20 @@ public class InputMenu extends javax.swing.JFrame {
         deleteBut = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelmenu = new javax.swing.JTable();
-        cariform = new javax.swing.JTextField();
-        searchbut = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         Back = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Input Menu");
 
         jLabel1.setText("Nama Menu");
 
         jLabel2.setText("Harga Menu");
+
+        hargamenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hargamenuActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Jenis Menu");
 
@@ -129,16 +139,12 @@ public class InputMenu extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tabelmenu);
-
-        searchbut.setText("Search");
-        searchbut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchbutActionPerformed(evt);
+        tabelmenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tabelmenuMouseClicked(evt);
             }
         });
-
-        jLabel4.setText("Cari Menu");
+        jScrollPane1.setViewportView(tabelmenu);
 
         Back.setText("Back");
         Back.addActionListener(new java.awt.event.ActionListener() {
@@ -154,29 +160,21 @@ public class InputMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(searchbut)
-                                .addGap(150, 150, 150))
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1)
+                            .addComponent(jenismenu, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(namamenu)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(cariform)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel2)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jenismenu, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(namamenu)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(addBut, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(editBut, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(deleteBut))
-                                        .addComponent(hargamenu)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addComponent(addBut, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(editBut, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(deleteBut))
+                            .addComponent(hargamenu))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -203,12 +201,6 @@ public class InputMenu extends javax.swing.JFrame {
                     .addComponent(addBut)
                     .addComponent(editBut)
                     .addComponent(deleteBut))
-                .addGap(10, 10, 10)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cariform, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(searchbut)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
@@ -223,7 +215,7 @@ public class InputMenu extends javax.swing.JFrame {
 
     private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
         // TODO add your handling code here:
-        new KantinMenu().setVisible(true);
+        new KantinMenu(value).setVisible(true);
         dispose();
     }//GEN-LAST:event_BackActionPerformed
 
@@ -231,99 +223,72 @@ public class InputMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         String nama = namamenu.getText();
         String price = hargamenu.getText();
-        double harga = Double.parseDouble(price);
+        int harga = Integer.parseInt(price);
         String jenis = jenismenu.getSelectedItem().toString();
         
-        try{
-            sql = "INSERT INTO menu (nama_menu, harga_menu, jenis) VALUES ('"+nama+"','"+harga+"','"+jenis+"')";
-            if(nama.isEmpty()|| price.isEmpty()|| jenismenu.getSelectedItem()=="--Choose--"){
-                JOptionPane.showMessageDialog(null,"Field harus di isi semua");
-                load_table("SELECT * FROM menu");
-            } else{
-                pst=con.prepareStatement(sql);
-                pst.execute();
-                JOptionPane.showMessageDialog(null,"Penyimpanan Data Berhasil");
-                load_table("SELECT * FROM menu");
-                hapus();
-            }
+        if(nama.isEmpty() || price.isEmpty() || jenismenu.getSelectedItem().equals("--Choose--")){
+            JOptionPane.showMessageDialog(null,"Isi Semua");
+        }else{
+            menu.setNamaMenu(nama);
+            menu.setHargaMenu(harga);
+            menu.setJenisMenu(jenis);
+            menu.addData(value);
+            JOptionPane.showMessageDialog(null,"Save Data Succes");
+            new InputMenu(value).setVisible(true);
+            hapus();
+            this.dispose();
             
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            
         }
+        
         
     }//GEN-LAST:event_addButActionPerformed
 
-    private void searchbutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbutActionPerformed
-        // TODO add your handling code here:
-        String search = cariform.getText();
-        double cari = Double.parseDouble(search);
-        try{        
-            load_table("SELECT * FROM menu WHERE idMenu=('"+cari+"')");
-            sql = "SELECT * FROM menu WHERE idMenu=('"+cari+"')";
-            stmt = con.createStatement();
-            res = stmt.executeQuery(sql);
-            while(res.next()){
-                namamenu.setText(res.getString("nama_menu"));
-                hargamenu.setText(res.getString("harga_menu"));
-                jenismenu.setName(res.getString("jenis"));
-            }
-         } catch (Exception e){
-            
-        }
-    }//GEN-LAST:event_searchbutActionPerformed
-
     private void editButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButActionPerformed
         // TODO add your handling code here:
-        String nama = namamenu.getText();
-        String price = hargamenu.getText();
-        int harga = Integer.parseInt(price);
-        String jenis = jenismenu.getSelectedItem().toString();
-        String search = cariform.getText();
-        int cari = Integer.parseInt(search);
-        try{
-             sql = "UPDATE menu SET "
-                   
-                     + "nama_menu='"+nama+"',"
-                     + "harga_menu="+harga+""
-                    //+ "jenis"='"+jenis+"',"
-                     + " where "
-                     + "idmenu="+cari+";"; 
-            // System.out.println(sql);
-             pst=con.prepareStatement(sql);
-             pst.execute();
-             JOptionPane.showMessageDialog(null,"Update Data Berhasil");
-             load_table("SELECT * FROM menu");
-             hapus();
-       
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(this, e.getMessage());
-        }
-        
-        /*
-        System.out.println("\n "+nama
-                + "\n "+harga
-                + "\n"+jenis);
-        */
+   
+        menu.setNamaMenu(namamenu.getText());
+        menu.setHargaMenu(Integer.parseInt(hargamenu.getText()));
+        menu.setJenisMenu(jenismenu.getSelectedItem().toString());
+        menu.updateData(idmenu);
+        hapus();
+        JOptionPane.showMessageDialog(null, "Update Data Succes");
+        new InputMenu(value).setVisible(true);
+        this.dispose();
+
     }//GEN-LAST:event_editButActionPerformed
 
     private void deleteButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButActionPerformed
         // TODO add your handling code here:
-        String search = cariform.getText();
-        int cari = Integer.parseInt(search);
-        try{
-            sql = "DELETE FROM menu WHERE "
-                    + "idmenu="+cari+";";
-            pst = con.prepareStatement(sql);
-            pst.execute();
-            JOptionPane.showMessageDialog(null,"Hapus Data Berhasil");
-            load_table("SELECT * FROM menu");
-            hapus();
-        }catch (Exception e){
-            
-        }
-        
-        
+    int YesNo = JOptionPane.showConfirmDialog(null,"Anda yakin akan menghapus menu?","Delete Menu",JOptionPane.YES_NO_OPTION);
+    if(YesNo == 0){
+        menu.deleteData(idmenu);
+        hapus();
+        JOptionPane.showMessageDialog(null, "Delete Data Succes");
+        new InputMenu(value).setVisible(true);
+        this.dispose();
+    } else{
+        JOptionPane.showMessageDialog(null, "Delete failed");
+        }  
+   
     }//GEN-LAST:event_deleteButActionPerformed
+
+    private void hargamenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hargamenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hargamenuActionPerformed
+
+    private void tabelmenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelmenuMouseClicked
+        // TODO add your handling code here:
+        int index = tabelmenu.getSelectedRow();
+        TableModel model = tabelmenu.getModel();
+        idmenu = Integer.parseInt(model.getValueAt(index, 0).toString());
+        a = model.getValueAt(index, 1).toString();
+        namamenu.setText(a);
+        b = model.getValueAt(index, 2).toString();
+        hargamenu.setText(b);
+        c = model.getValueAt(index, 3).toString();
+        jenismenu.setSelectedItem(c);
+    }//GEN-LAST:event_tabelmenuMouseClicked
 
     /**
      * @param args the command line arguments
@@ -363,18 +328,15 @@ public class InputMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Back;
     private javax.swing.JButton addBut;
-    private javax.swing.JTextField cariform;
     private javax.swing.JButton deleteBut;
     private javax.swing.JButton editBut;
     private javax.swing.JTextField hargamenu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox<String> jenismenu;
     private javax.swing.JTextField namamenu;
-    private javax.swing.JButton searchbut;
     private javax.swing.JTable tabelmenu;
     // End of variables declaration//GEN-END:variables
 }

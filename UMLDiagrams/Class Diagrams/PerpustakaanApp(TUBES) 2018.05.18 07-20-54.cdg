@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PerpustakaanApp(TUBES)">
+  <ClassDiagramComponents>
+    <Class name="Admin" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="tabel" type="DefaultTableModel" visibility="package"/>
+        <Field name="am" type="AnggotaModel" visibility="package"/>
+        <Field name="dataAnggota" type="List&lt;AnggotaModel&gt;" visibility="package"/>
+        <Field name="JK" type="String" visibility="package"/>
+        <Field name="CmbKategori" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="Edit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Hapus" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Keluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Kodebuku" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="NamaAnggota" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="NamaAnggota1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="NamaAnggota2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="NamaAnggota3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Simpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Tambah" type="javax.swing.JButton" visibility="private"/>
+        <Field name="cmbJK" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblAnggota" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtAlamat" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNO" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNama" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTelp" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="bersihText" returnType="void" visibility="private"/>
+        <Method name="siapIsi" returnType="void" visibility="private">
+          <Argument type="boolean" name="x"/>
+        </Method>
+        <Method name="buatTabel" returnType="void" visibility="private"/>
+        <Method name="tampilTabel" returnType="void" visibility="private"/>
+        <Method name="buatKode" returnType="void" visibility="private"/>
+        <Method name="isijk" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="CmbKategoriActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="HapusActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="EditActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="SimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="TambahActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tblAnggotaMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="KeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtNOActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DataKategori" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="tabel" type="DefaultTableModel" visibility="package"/>
+        <Field name="km" type="KategoriModel" visibility="package"/>
+        <Field name="dataKategori" type="List&lt;KategoriModel&gt;" visibility="package"/>
+        <Field name="Hapus" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Keluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Simpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblKategori" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtNama" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="bersihText" returnType="void" visibility="public"/>
+        <Method name="buatTabel" returnType="void" visibility="private"/>
+        <Method name="tampilTabel" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="HapusActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="SimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tblKategoriMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="txtNamaKeyPressed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="KeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Login" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="FPassword" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="FUsername" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Judul" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Password" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Username" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="btnExit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnLogin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="java.awt.Frame" name="parent"/>
+          <Argument type="boolean" name="modal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnLoginActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnExitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MBuku" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="tabel" type="DefaultTableModel" visibility="package"/>
+        <Field name="bm" type="BukuModel" visibility="package"/>
+        <Field name="dataBuku" type="List&lt;BukuModel&gt;" visibility="package"/>
+        <Field name="CmbKategori" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="Edit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Hapus" type="javax.swing.JButton" visibility="private"/>
+        <Field name="ID" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="ISBN" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Judul" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Kategoribuku" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Kategoribuku1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Keluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Kode" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Kodebuku" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="Penerbit" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Pengarang" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Simpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Stock" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="Tambah" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblBuku" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtIdBuku" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="bersihText" returnType="void" visibility="private"/>
+        <Method name="siapIsi" returnType="void" visibility="private">
+          <Argument type="boolean" name="x"/>
+        </Method>
+        <Method name="isiKategori" returnType="void" visibility="private"/>
+        <Method name="buatTabel" returnType="void" visibility="private"/>
+        <Method name="tampilTabel" returnType="void" visibility="private"/>
+        <Method name="buatKode" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="CmbKategoriActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtIdBukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="StockKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="ISBNKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="tblBukuMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="HapusActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="EditActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="TambahActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="cmbKategoriActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnKeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="SimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="KeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuUtama" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="Anggota" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="Buku" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="Kategori" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="Peminjaman" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="exit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="jMenuItem11" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem5" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem7" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem8" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItem9" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="mAdmin" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="mLaporan" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="mSetting" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="mTransaksi" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="setting" type="javax.swing.JMenuItem" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="hakAksesAdmin" returnType="void" visibility="public"/>
+        <Method name="hakAksesOperator" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jMenuItem1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem3ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem9ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="settingActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItem11ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="AnggotaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="BukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="KategoriActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="exitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="PeminjamanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Peminjaman" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="pm" type="PeminjamanModel" visibility="package"/>
+        <Field name="data" type="List&lt;PeminjamanModel&gt;" visibility="package"/>
+        <Field name="tabel" type="DefaultTableModel" visibility="package"/>
+        <Field name="tf" type="SimpleDateFormat" visibility="package"/>
+        <Field name="pdm" type="PeminjamanDetailModel" visibility="package"/>
+        <Field name="dataPinjamDetail" type="List&lt;PeminjamanDetailModel&gt;" visibility="package"/>
+        <Field name="btnCetak" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnDetail" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnHapus" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnKeluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnTambah" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnTampil" type="javax.swing.JButton" visibility="private"/>
+        <Field name="dialogBuku" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="tblBuku" type="javax.swing.JTable" visibility="private"/>
+        <Field name="tblPinjam" type="javax.swing.JTable" visibility="private"/>
+        <Field name="tgl1" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="tgl2" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="buatTabel" returnType="void" visibility="private"/>
+        <Method name="buatTabelBuku" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnTampilActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnTambahActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnDetailActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnHapusActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnKeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnCetakActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Setting" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="sm" type="SettingModel" visibility="package"/>
+        <Field name="data" type="List&lt;SettingModel&gt;" visibility="package"/>
+        <Field name="btnKeluar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSimpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel2" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="txtBuku" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtDenda" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtPinjam" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnSimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnKeluarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TambahPeminjaman" package="perpustakaanapp.tubes.GUI" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="anggota_id" type="String" visibility="package"/>
+        <Field name="max_buku" type="int" visibility="package"/>
+        <Field name="pm" type="PeminjamanModel" visibility="package"/>
+        <Field name="tabel" type="DefaultTableModel" visibility="package"/>
+        <Field name="am" type="AnggotaModel" visibility="package"/>
+        <Field name="dataAnggota" type="List&lt;AnggotaModel&gt;" visibility="package"/>
+        <Field name="bm" type="BukuModel" visibility="package"/>
+        <Field name="dataBuku" type="List&lt;BukuModel&gt;" visibility="package"/>
+        <Field name="btnBatal" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnBatalAnggota" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnBatalBuku" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCariAnggota" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnCariBuku" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnHapusBuku" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnPilih" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnPilihBuku" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSimpan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnTambahBuku" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel11" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel8" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel5" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel6" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel7" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel8" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel9" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane3" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="relasiAnggota" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="relasiBuku" type="javax.swing.JDialog" visibility="private"/>
+        <Field name="tblAnggota" type="javax.swing.JTable" visibility="private"/>
+        <Field name="tblBuku" type="javax.swing.JTable" visibility="private"/>
+        <Field name="tblCariBuku" type="javax.swing.JTable" visibility="private"/>
+        <Field name="txtCari" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtCariBuku" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtKodeBuku" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNamaAnggota" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNmBuku" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNoAnggota" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtNoPinjam" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTglKembali" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtTglPinjam" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="buatTabelDetailBuku" returnType="void" visibility="private"/>
+        <Method name="buatTabelAnggota" returnType="void" visibility="private"/>
+        <Method name="tampilTanggal" returnType="void" visibility="private"/>
+        <Method name="ambilDataSetting" returnType="void" visibility="private"/>
+        <Method name="bersih" returnType="void" visibility="private"/>
+        <Method name="tampilAnggota" returnType="void" visibility="private"/>
+        <Method name="buatTabelBuku" returnType="void" visibility="private"/>
+        <Method name="tampilTabelBuku" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnCariBukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnTambahBukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnHapusBukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtTglPinjamActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtTglKembaliActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnSimpanActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBatalActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnPilihActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBatalAnggotaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tblAnggotaMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="txtCariActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtCariKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="btnPilihBukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnBatalBukuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtCariBukuKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="tblCariBukuMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="btnCariAnggotaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtNoPinjamActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AnggotaModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getNo" returnType="String" visibility="public"/>
+        <Method name="setNo" returnType="void" visibility="public">
+          <Argument type="String" name="no"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="getJk" returnType="String" visibility="public"/>
+        <Method name="setJk" returnType="void" visibility="public">
+          <Argument type="String" name="jk"/>
+        </Method>
+        <Method name="getTelp" returnType="String" visibility="public"/>
+        <Method name="setTelp" returnType="void" visibility="public">
+          <Argument type="String" name="telp"/>
+        </Method>
+        <Method name="getAlamat" returnType="String" visibility="public"/>
+        <Method name="setAlamat" returnType="void" visibility="public">
+          <Argument type="String" name="alamat"/>
+        </Method>
+        <Method name="tambah" returnType="void" visibility="public"/>
+        <Method name="edit" returnType="void" visibility="public"/>
+        <Method name="hapus" returnType="void" visibility="public"/>
+        <Method name="tampil" returnType="List" visibility="public"/>
+        <Method name="cariAnggota" returnType="List" visibility="public">
+          <Argument type="String" name="cari"/>
+        </Method>
+        <Method name="getNo" returnType="void" visibility="public">
+          <Argument type="String" name="text"/>
+        </Method>
+        <Method name="getNama" returnType="void" visibility="public">
+          <Argument type="String" name="text"/>
+        </Method>
+        <Method name="getAlamat" returnType="void" visibility="public">
+          <Argument type="String" name="text"/>
+        </Method>
+        <Method name="getTelp" returnType="void" visibility="public">
+          <Argument type="String" name="text"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="BukuModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getNama_kategori" returnType="String" visibility="public"/>
+        <Method name="setNama_kategori" returnType="void" visibility="public">
+          <Argument type="String" name="nama_kategori"/>
+        </Method>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getKode" returnType="String" visibility="public"/>
+        <Method name="setKode" returnType="void" visibility="public">
+          <Argument type="String" name="kode"/>
+        </Method>
+        <Method name="getJudul" returnType="String" visibility="public"/>
+        <Method name="setJudul" returnType="void" visibility="public">
+          <Argument type="String" name="judul"/>
+        </Method>
+        <Method name="getPengarang" returnType="String" visibility="public"/>
+        <Method name="setPengarang" returnType="void" visibility="public">
+          <Argument type="String" name="pengarang"/>
+        </Method>
+        <Method name="getPenerbit" returnType="String" visibility="public"/>
+        <Method name="setPenerbit" returnType="void" visibility="public">
+          <Argument type="String" name="penerbit"/>
+        </Method>
+        <Method name="getIsbn" returnType="String" visibility="public"/>
+        <Method name="setIsbn" returnType="void" visibility="public">
+          <Argument type="String" name="isbn"/>
+        </Method>
+        <Method name="getStok" returnType="String" visibility="public"/>
+        <Method name="setStok" returnType="void" visibility="public">
+          <Argument type="String" name="stok"/>
+        </Method>
+        <Method name="getKategori_id" returnType="String" visibility="public"/>
+        <Method name="setKategori_id" returnType="void" visibility="public">
+          <Argument type="String" name="kategori_id"/>
+        </Method>
+        <Method name="tambah" returnType="void" visibility="public"/>
+        <Method name="edit" returnType="void" visibility="public"/>
+        <Method name="hapus" returnType="void" visibility="public"/>
+        <Method name="tampil" returnType="List" visibility="public"/>
+        <Method name="cariBuku" returnType="List" visibility="public">
+          <Argument type="String" name="cari"/>
+        </Method>
+        <Method name="updateStokBuku" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="int" name="jmlPinjam"/>
+        </Method>
+        <Method name="kembalikanStokBuku" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="int" name="jmlPinjam"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="KategoriModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="tambah" returnType="void" visibility="public"/>
+        <Method name="edit" returnType="void" visibility="public"/>
+        <Method name="hapus" returnType="void" visibility="public"/>
+        <Method name="tampil" returnType="List" visibility="public"/>
+        <Method name="cariIdKategori" returnType="List" visibility="public">
+          <Argument type="String" name="kategori"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="KoneksiDB" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="koneksi" type="Connection" visibility="public" isStatic="true"/>
+        <Field name="st" type="Statement" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="ambilKoneksi" returnType="Connection" visibility="public" isStatic="true"/>
+        <Method name="koneksi" returnType="void" visibility="public"/>
+        <Method name="tutupKoneksi" returnType="void" visibility="public">
+          <Argument type="ResultSet" name="rs"/>
+        </Method>
+        <Method name="ambilData" returnType="ResultSet" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+        <Method name="simpanData" returnType="void" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LaporanModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="koneksi" type="Connection" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cetakBukuSemua" returnType="void" visibility="public"/>
+        <Method name="cetakPerKategori" returnType="void" visibility="public">
+          <Argument type="String" name="kategori"/>
+        </Method>
+        <Method name="cetakBuktiPinjam" returnType="void" visibility="public">
+          <Argument type="String" name="nopinjam"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PeminjamanDetailModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="id_pinjam" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId_pinjam" returnType="String" visibility="public"/>
+        <Method name="setId_pinjam" returnType="void" visibility="public">
+          <Argument type="String" name="id_pinjam"/>
+        </Method>
+        <Method name="getId_buku" returnType="String" visibility="public"/>
+        <Method name="setId_buku" returnType="void" visibility="public">
+          <Argument type="String" name="id_buku"/>
+        </Method>
+        <Method name="getKode" returnType="String" visibility="public"/>
+        <Method name="setKode" returnType="void" visibility="public">
+          <Argument type="String" name="kode"/>
+        </Method>
+        <Method name="getJudul" returnType="String" visibility="public"/>
+        <Method name="setJudul" returnType="void" visibility="public">
+          <Argument type="String" name="judul"/>
+        </Method>
+        <Method name="getPengarang" returnType="String" visibility="public"/>
+        <Method name="setPengarang" returnType="void" visibility="public">
+          <Argument type="String" name="pengarang"/>
+        </Method>
+        <Method name="getPenerbit" returnType="String" visibility="public"/>
+        <Method name="setPenerbit" returnType="void" visibility="public">
+          <Argument type="String" name="penerbit"/>
+        </Method>
+        <Method name="tambah" returnType="void" visibility="public"/>
+        <Method name="hapus" returnType="void" visibility="public"/>
+        <Method name="tampilBuku" returnType="List" visibility="public">
+          <Argument type="String" name="noPinjam"/>
+        </Method>
+        <Method name="cariBuku" returnType="List" visibility="public">
+          <Argument type="String" name="noPinjam"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PeminjamanModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getNo_pinjam" returnType="String" visibility="public"/>
+        <Method name="setNo_pinjam" returnType="void" visibility="public">
+          <Argument type="String" name="no_pinjam"/>
+        </Method>
+        <Method name="getTgl_pinjam" returnType="String" visibility="public"/>
+        <Method name="setTgl_pinjam" returnType="void" visibility="public">
+          <Argument type="String" name="tgl_pinjam"/>
+        </Method>
+        <Method name="getTgl_kembali" returnType="String" visibility="public"/>
+        <Method name="setTgl_kembali" returnType="void" visibility="public">
+          <Argument type="String" name="tgl_kembali"/>
+        </Method>
+        <Method name="getAnggota_id" returnType="String" visibility="public"/>
+        <Method name="setAnggota_id" returnType="void" visibility="public">
+          <Argument type="String" name="anggota_id"/>
+        </Method>
+        <Method name="getNama_anggota" returnType="String" visibility="public"/>
+        <Method name="setNama_anggota" returnType="void" visibility="public">
+          <Argument type="String" name="nama_anggota"/>
+        </Method>
+        <Method name="tampilBerdasarkanTgl" returnType="List" visibility="public">
+          <Argument type="String" name="tgl1"/>
+          <Argument type="String" name="tgl2"/>
+        </Method>
+        <Method name="tambah" returnType="void" visibility="public"/>
+        <Method name="hapus" returnType="void" visibility="public"/>
+        <Method name="buatNoPinjam" returnType="String" visibility="public"/>
+        <Method name="ambilIdTerakhir" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PengembalianModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getID" returnType="String" visibility="public"/>
+        <Method name="setStock" returnType="void" visibility="public">
+          <Argument type="String" name="Stock"/>
+        </Method>
+        <Method name="setID" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="setid_buku" returnType="void" visibility="public">
+          <Argument type="String" name="idbuku"/>
+        </Method>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getNo_pinjam" returnType="String" visibility="public"/>
+        <Method name="setNo_pinjam" returnType="void" visibility="public">
+          <Argument type="String" name="no_pinjam"/>
+        </Method>
+        <Method name="getTgl_pinjam" returnType="String" visibility="public"/>
+        <Method name="setTgl_pinjam" returnType="void" visibility="public">
+          <Argument type="String" name="tgl_pinjam"/>
+        </Method>
+        <Method name="getTgl_kembali" returnType="String" visibility="public"/>
+        <Method name="setTgl_kembali" returnType="void" visibility="public">
+          <Argument type="String" name="tgl_kembali"/>
+        </Method>
+        <Method name="getAnggota_id" returnType="String" visibility="public"/>
+        <Method name="setAnggota_id" returnType="void" visibility="public">
+          <Argument type="String" name="anggota_id"/>
+        </Method>
+        <Method name="getNama_anggota" returnType="String" visibility="public"/>
+        <Method name="setNama_anggota" returnType="void" visibility="public">
+          <Argument type="String" name="nama_anggota"/>
+        </Method>
+        <Method name="carinopinjam" returnType="List" visibility="public">
+          <Argument type="String" name="noPinjam"/>
+        </Method>
+        <Method name="hapus" returnType="void" visibility="public"/>
+        <Method name="caribuku" returnType="List" visibility="public">
+          <Argument type="String" name="idPinjam"/>
+        </Method>
+        <Method name="tampilBuku" returnType="List" visibility="public">
+          <Argument type="String" name="noPinjam"/>
+        </Method>
+        <Method name="tambahstock" returnType="void" visibility="public">
+          <Argument type="String" name="idbuku"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PenggunaModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="id" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="String" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="getTelp" returnType="String" visibility="public"/>
+        <Method name="setTelp" returnType="void" visibility="public">
+          <Argument type="String" name="telp"/>
+        </Method>
+        <Method name="getAlamat" returnType="String" visibility="public"/>
+        <Method name="setAlamat" returnType="void" visibility="public">
+          <Argument type="String" name="alamat"/>
+        </Method>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="setUsername" returnType="void" visibility="public">
+          <Argument type="String" name="username"/>
+        </Method>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getHakakses" returnType="String" visibility="public"/>
+        <Method name="setHakakses" returnType="void" visibility="public">
+          <Argument type="String" name="hakakses"/>
+        </Method>
+        <Method name="cariLogin" returnType="List" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="pass"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SettingModel" package="perpustakaanapp.tubes.Model" visibility="public" xPosition="648.0" yPosition="908.0">
+      <Fields>
+        <Field name="max_buku" type="String" visibility="package"/>
+        <Field name="db" type="KoneksiDB" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMax_buku" returnType="String" visibility="public"/>
+        <Method name="setMax_buku" returnType="void" visibility="public">
+          <Argument type="String" name="max_buku"/>
+        </Method>
+        <Method name="getBatas_pinjam" returnType="String" visibility="public"/>
+        <Method name="setBatas_pinjam" returnType="void" visibility="public">
+          <Argument type="String" name="batas_pinjam"/>
+        </Method>
+        <Method name="getDenda" returnType="String" visibility="public"/>
+        <Method name="setDenda" returnType="void" visibility="public">
+          <Argument type="String" name="denda"/>
+        </Method>
+        <Method name="edit" returnType="void" visibility="public"/>
+        <Method name="tampil" returnType="List" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PerpustakaanAppTUBES" package="perpustakaanapp.tubes" visibility="public" xPosition="620.0" yPosition="820.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="dataPinjamDetail" source="perpustakaanapp.tubes.GUI.Peminjaman" target="perpustakaanapp.tubes.Model.PeminjamanDetailModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;PeminjamanDetailModel&gt;"/>
+    <HasRelation name="pdm" source="perpustakaanapp.tubes.GUI.Peminjaman" target="perpustakaanapp.tubes.Model.PeminjamanDetailModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.SettingModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.AnggotaModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pm" source="perpustakaanapp.tubes.GUI.TambahPeminjaman" target="perpustakaanapp.tubes.Model.PeminjamanModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataAnggota" source="perpustakaanapp.tubes.GUI.Admin" target="perpustakaanapp.tubes.Model.AnggotaModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;AnggotaModel&gt;"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.KategoriModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="bm" source="perpustakaanapp.tubes.GUI.TambahPeminjaman" target="perpustakaanapp.tubes.Model.BukuModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.PeminjamanModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.PengembalianModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataAnggota" source="perpustakaanapp.tubes.GUI.TambahPeminjaman" target="perpustakaanapp.tubes.Model.AnggotaModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;AnggotaModel&gt;"/>
+    <HasRelation name="bm" source="perpustakaanapp.tubes.GUI.MBuku" target="perpustakaanapp.tubes.Model.BukuModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="km" source="perpustakaanapp.tubes.GUI.DataKategori" target="perpustakaanapp.tubes.Model.KategoriModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="am" source="perpustakaanapp.tubes.GUI.TambahPeminjaman" target="perpustakaanapp.tubes.Model.AnggotaModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pm" source="perpustakaanapp.tubes.GUI.Peminjaman" target="perpustakaanapp.tubes.Model.PeminjamanModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="perpustakaanapp.tubes.GUI.Peminjaman" target="perpustakaanapp.tubes.Model.PeminjamanModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;PeminjamanModel&gt;"/>
+    <HasRelation name="dataKategori" source="perpustakaanapp.tubes.GUI.DataKategori" target="perpustakaanapp.tubes.Model.KategoriModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;KategoriModel&gt;"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.PenggunaModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.PeminjamanDetailModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="am" source="perpustakaanapp.tubes.GUI.Admin" target="perpustakaanapp.tubes.Model.AnggotaModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="db" source="perpustakaanapp.tubes.Model.BukuModel" target="perpustakaanapp.tubes.Model.KoneksiDB" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="sm" source="perpustakaanapp.tubes.GUI.Setting" target="perpustakaanapp.tubes.Model.SettingModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="SettingModel"/>
+    <HasRelation name="dataBuku" source="perpustakaanapp.tubes.GUI.TambahPeminjaman" target="perpustakaanapp.tubes.Model.BukuModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;BukuModel&gt;"/>
+    <HasRelation name="data" source="perpustakaanapp.tubes.GUI.Setting" target="perpustakaanapp.tubes.Model.SettingModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;SettingModel&gt;"/>
+    <HasRelation name="dataBuku" source="perpustakaanapp.tubes.GUI.MBuku" target="perpustakaanapp.tubes.Model.BukuModel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;BukuModel&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

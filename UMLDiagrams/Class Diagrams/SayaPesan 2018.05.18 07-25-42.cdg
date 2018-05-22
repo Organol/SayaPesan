@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SayaPesan">
+  <ClassDiagramComponents>
+    <Class name="Menu" package="Entity" visibility="public" xPosition="1000.0" yPosition="1900.0">
+      <Fields>
+        <Field name="idmenu" type="int" visibility="public"/>
+        <Field name="namamenu" type="String" visibility="package"/>
+        <Field name="hargamenu" type="int" visibility="package"/>
+        <Field name="idtenant" type="int" visibility="package"/>
+        <Field name="t" type="Tenant" visibility="public" isStatic="true"/>
+        <Field name="O" type="orders" visibility="public" isStatic="true"/>
+        <Field name="p" type="Pemesan" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setIdMenu" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="getidmenu" returnType="int" visibility="public"/>
+        <Method name="setNamaMenu" returnType="void" visibility="public">
+          <Argument type="String" name="namamenu"/>
+        </Method>
+        <Method name="getNamaMenu" returnType="String" visibility="public"/>
+        <Method name="setJenisMenu" returnType="void" visibility="public">
+          <Argument type="String" name="jenismenu"/>
+        </Method>
+        <Method name="getJenisMenu" returnType="String" visibility="public"/>
+        <Method name="setHargaMenu" returnType="void" visibility="public">
+          <Argument type="int" name="harga"/>
+        </Method>
+        <Method name="getHargaMenu" returnType="int" visibility="public"/>
+        <Method name="printinfo" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="orders" package="Entity" visibility="public" xPosition="1839.0" yPosition="1101.0">
+      <Fields>
+        <Field name="idOrder" type="int" visibility="package"/>
+        <Field name="p" type="Pemesan" visibility="public"/>
+        <Field name="m" type="Menu" visibility="public"/>
+        <Field name="t" type="Tenant" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setIdOrder" returnType="void" visibility="public">
+          <Argument type="int" name="idOrder"/>
+        </Method>
+        <Method name="getidOrder" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pemesan" package="Entity" visibility="public" xPosition="1529.0" yPosition="1728.0">
+      <Fields>
+        <Field name="idpemesan" type="int" visibility="package"/>
+        <Field name="namapemesan" type="String" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getTagihan" returnType="int" visibility="public"/>
+        <Method name="settagihan" returnType="void" visibility="public">
+          <Argument type="int" name="tagihan"/>
+        </Method>
+        <Method name="getNama" returnType="String" visibility="public"/>
+        <Method name="setNama" returnType="void" visibility="public">
+          <Argument type="String" name="nama"/>
+        </Method>
+        <Method name="getIdpemesan" returnType="int" visibility="public"/>
+        <Method name="setIdPemesan" returnType="void" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+        </Method>
+        <Method name="getLantai" returnType="int" visibility="public"/>
+        <Method name="setLantai" returnType="void" visibility="public">
+          <Argument type="int" name="lantai"/>
+        </Method>
+        <Method name="getRuang" returnType="String" visibility="public"/>
+        <Method name="setRuang" returnType="void" visibility="public">
+          <Argument type="String" name="ruang"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tenant" package="Entity" visibility="public" xPosition="721.0" yPosition="144.0">
+      <Fields>
+        <Field name="namatenant" type="String" visibility="package"/>
+        <Field name="idtenant" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setIdtenant" returnType="void" visibility="public">
+          <Argument type="int" name="idtenant"/>
+        </Method>
+        <Method name="getidTenant" returnType="int" visibility="public"/>
+        <Method name="setNamaPemilik" returnType="void" visibility="public">
+          <Argument type="String" name="NamaPemilik"/>
+        </Method>
+        <Method name="getNamaPemilik" returnType="String" visibility="public"/>
+        <Method name="setNamatenat" returnType="void" visibility="public">
+          <Argument type="String" name="namatenant"/>
+        </Method>
+        <Method name="getNamaTenant" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="Entity" visibility="public" xPosition="253.0" yPosition="2021.0">
+      <Fields>
+        <Field name="idUser" type="int" visibility="public"/>
+        <Field name="Username" type="String" visibility="public"/>
+        <Field name="Password" type="String" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getPassword" returnType="String" visibility="public"/>
+        <Method name="setPassword" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="idUser"/>
+        </Method>
+        <Method name="getHak" returnType="String" visibility="public"/>
+        <Method name="setHakAkses" returnType="void" visibility="public">
+          <Argument type="String" name="hak"/>
+        </Method>
+        <Method name="getUsername" returnType="String" visibility="public"/>
+        <Method name="setUsername" returnType="void" visibility="public">
+          <Argument type="String" name="Username"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="InputMenu" package="Kantin" visibility="public" xPosition="1803.0" yPosition="1481.0">
+      <Fields>
+        <Field name="value" type="int" visibility="package"/>
+        <Field name="idmenu" type="int" visibility="package"/>
+        <Field name="a" type="String" visibility="package"/>
+        <Field name="menu" type="MenuCon" visibility="package"/>
+        <Field name="data" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="Back" type="javax.swing.JButton" visibility="private"/>
+        <Field name="addBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="deleteBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="editBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="hargamenu" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jenismenu" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="namamenu" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="tabelmenu" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="load_table" returnType="void" visibility="private"/>
+        <Method name="hapus" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="BackActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="addButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="editButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="deleteButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="hargamenuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="tabelmenuMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="KantinMenu" package="Kantin" visibility="public" xPosition="2059.0" yPosition="838.0">
+      <Fields>
+        <Field name="value" type="int" visibility="package"/>
+        <Field name="InputMe" type="javax.swing.JButton" visibility="private"/>
+        <Field name="LogoutBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="Orders" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="InputMeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="OrdersActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="LogoutButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrderDetails" package="Kantin" visibility="public" xPosition="24.0" yPosition="968.0">
+      <Fields>
+        <Field name="order" type="OrdersCon" visibility="package"/>
+        <Field name="dataOrder" type="List&lt;orders&gt;" visibility="package"/>
+        <Field name="orderPemesan" type="OrdersCon" visibility="package"/>
+        <Field name="dataPemesan" type="List&lt;orders&gt;" visibility="package"/>
+        <Field name="aorders" type="int" visibility="package"/>
+        <Field name="TableODetails" type="javax.swing.JTable" visibility="private"/>
+        <Field name="exit" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="namapemesan" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="tempatkirim" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="load_table" returnType="void" visibility="private"/>
+        <Method name="load_emblemPemesan" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="exitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Orders" package="Kantin" visibility="public" xPosition="1742.0" yPosition="271.0">
+      <Fields>
+        <Field name="order" type="OrdersCon" visibility="package"/>
+        <Field name="data" type="List&lt;orders&gt;" visibility="package"/>
+        <Field name="value" type="int" visibility="package"/>
+        <Field name="a" type="String" visibility="package"/>
+        <Field name="orderTenant" type="OrdersCon" visibility="package"/>
+        <Field name="dataMenu" type="Menu" visibility="package"/>
+        <Field name="dataTenant" type="List&lt;orders&gt;" visibility="package"/>
+        <Field name="BackBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="IdKantinForm" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="NamaKantin" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="TabelOrders" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="namaPemilikText" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="load_table" returnType="void" visibility="private"/>
+        <Method name="detailsKantin" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="TabelOrdersMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="BackButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PemesanMenu" package="Kantin" visibility="public" xPosition="1278.0" yPosition="144.0">
+      <Fields>
+        <Field name="value" type="int" visibility="package"/>
+        <Field name="LihatMenu" type="javax.swing.JButton" visibility="private"/>
+        <Field name="LihatPesanan" type="javax.swing.JButton" visibility="private"/>
+        <Field name="LogOutBut" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="LihatMenuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="LihatPesananActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="LogOutButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="config" package="Koneksi" visibility="public" xPosition="721.0" yPosition="1855.0">
+      <Fields>
+        <Field name="con" type="Connection" visibility="public"/>
+        <Field name="stmt" type="Statement" visibility="public"/>
+        <Field name="rss" type="ResultSet" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="config" returnType="void" visibility="public"/>
+        <Method name="getData" returnType="ResultSet" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+        <Method name="saveData" returnType="void" visibility="public">
+          <Argument type="String" name="sql"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginCon" package="Koneksi" visibility="public" xPosition="999.0" yPosition="100.0">
+      <Fields>
+        <Field name="sql" type="String" visibility="package"/>
+        <Field name="koneksi" type="config" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Login" returnType="List" visibility="public">
+          <Argument type="String" name="username"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MenuCon" package="Koneksi" visibility="public" xPosition="35.0" yPosition="2021.0">
+      <Fields>
+        <Field name="sql" type="String" visibility="package"/>
+        <Field name="koneksi" type="config" visibility="package"/>
+        <Field name="data" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="rs" type="ResultSet" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addData" returnType="void" visibility="public">
+          <Argument type="int" name="idkantin"/>
+        </Method>
+        <Method name="updateData" returnType="void" visibility="public">
+          <Argument type="int" name="cari"/>
+        </Method>
+        <Method name="deleteData" returnType="void" visibility="public">
+          <Argument type="int" name="cari"/>
+        </Method>
+        <Method name="showData" returnType="List" visibility="public">
+          <Argument type="int" name="idUser"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OrdersCon" package="Koneksi" visibility="public" xPosition="1278.0" yPosition="1855.0">
+      <Fields>
+        <Field name="sql" type="String" visibility="package"/>
+        <Field name="koneksi" type="config" visibility="package"/>
+        <Field name="rs" type="ResultSet" visibility="package"/>
+        <Field name="data" type="List&lt;orders&gt;" visibility="package"/>
+        <Field name="dataTenant" type="List&lt;orders&gt;" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="showData" returnType="List" visibility="public">
+          <Argument type="int" name="idKantin"/>
+        </Method>
+        <Method name="OrderDetails" returnType="List" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+        </Method>
+        <Method name="DetailsKantin" returnType="List" visibility="public">
+          <Argument type="int" name="idUser"/>
+        </Method>
+        <Method name="DetailsPemesan" returnType="List" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PemesananCon" package="Koneksi" visibility="public" xPosition="75.0" yPosition="581.0">
+      <Fields>
+        <Field name="sql" type="String" visibility="package"/>
+        <Field name="koneksi" type="config" visibility="package"/>
+        <Field name="data" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="dataOrder" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="rs" type="ResultSet" visibility="package"/>
+        <Field name="or" type="orders" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="showDataMenu" returnType="List" visibility="public"/>
+        <Method name="showDataPemesan" returnType="List" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+        </Method>
+        <Method name="HitungTagihan" returnType="List" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+        </Method>
+        <Method name="showDataOrder" returnType="List" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+        </Method>
+        <Method name="addDataOrder" returnType="void" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+          <Argument type="int" name="idMenu"/>
+          <Argument type="int" name="idKantin"/>
+        </Method>
+        <Method name="deleteData" returnType="void" visibility="public">
+          <Argument type="int" name="idPemesan"/>
+          <Argument type="int" name="idMenu"/>
+          <Argument type="int" name="idKantin"/>
+        </Method>
+        <Method name="deleteData" returnType="void" visibility="public">
+          <Argument type="int" name="idOrder"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LihatMenu" package="Pemesan" visibility="public" xPosition="35.0" yPosition="1453.0">
+      <Fields>
+        <Field name="menu" type="PemesananCon" visibility="package"/>
+        <Field name="data" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="dataOrder" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="value" type="int" visibility="package"/>
+        <Field name="CancelBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="HapusBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="PesanBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="TabelPesan" type="javax.swing.JTable" visibility="private"/>
+        <Field name="TableMenu" type="javax.swing.JTable" visibility="private"/>
+        <Field name="TambahBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jSpinner1" type="javax.swing.JSpinner" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="load_table" returnType="void" visibility="private"/>
+        <Method name="clear_tablePesanan" returnType="void" visibility="private"/>
+        <Method name="load_tablePesanan" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="TambahButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="HapusButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="CancelButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="PesanButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LihatPesanan" package="Pemesan" visibility="public" xPosition="833.0" yPosition="701.0">
+      <Fields>
+        <Field name="menu" type="PemesananCon" visibility="package"/>
+        <Field name="dataOrder" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="orderPemesan" type="PemesananCon" visibility="package"/>
+        <Field name="dataPemesan" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="tagihPemesan" type="PemesananCon" visibility="package"/>
+        <Field name="TagihanPemesan" type="List&lt;Menu&gt;" visibility="package"/>
+        <Field name="value" type="int" visibility="package"/>
+        <Field name="Tagihan" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="alamat" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="backBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="dataPesanan" type="javax.swing.JTable" visibility="private"/>
+        <Field name="idpemesan" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="namapemesan" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="value"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="load_tablePesanan" returnType="void" visibility="private"/>
+        <Method name="load_dataPemesan" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="backButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Login" package="sayapesan" visibility="public" xPosition="24.0" yPosition="193.0">
+      <Fields>
+        <Field name="login" type="LoginCon" visibility="package"/>
+        <Field name="carilogin" type="List&lt;User&gt;" visibility="package"/>
+        <Field name="data" type="int" visibility="package"/>
+        <Field name="CancelBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="LogBut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="PassForm" type="javax.swing.JPasswordField" visibility="private"/>
+        <Field name="UserForm" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="UserFormActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="LogButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="CancelButActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SayaPesan" package="sayapesan" visibility="public" xPosition="1839.0" yPosition="1341.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="order" source="Kantin.Orders" target="Koneksi.OrdersCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Koneksi.OrdersCon" target="Entity.orders"/>
+    <HasRelation name="dataPemesan" source="Kantin.OrderDetails" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;orders&gt;"/>
+    <HasRelation name="or" source="Koneksi.PemesananCon" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="p" source="Entity.Menu" target="Entity.Pemesan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="koneksi" source="Koneksi.PemesananCon" target="Koneksi.config" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="p" source="Entity.orders" target="Entity.Pemesan" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="orderTenant" source="Kantin.Orders" target="Koneksi.OrdersCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataOrder" source="Pemesan.LihatPesanan" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="m" source="Entity.orders" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="Koneksi.PemesananCon" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="koneksi" source="Koneksi.OrdersCon" target="Koneksi.config" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="Pemesan.LihatMenu" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="data" source="Kantin.InputMenu" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="koneksi" source="Koneksi.LoginCon" target="Koneksi.config" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="Entity.Menu" target="Entity.Tenant" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="order" source="Kantin.OrderDetails" target="Koneksi.OrdersCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Koneksi.MenuCon" target="Entity.Menu"/>
+    <HasRelation name="menu" source="Kantin.InputMenu" target="Koneksi.MenuCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="orderPemesan" source="Pemesan.LihatPesanan" target="Koneksi.PemesananCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tagihPemesan" source="Pemesan.LihatPesanan" target="Koneksi.PemesananCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="Koneksi.MenuCon" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="TagihanPemesan" source="Pemesan.LihatPesanan" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="dataOrder" source="Koneksi.PemesananCon" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="dataTenant" source="Koneksi.OrdersCon" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;orders&gt;"/>
+    <HasRelation name="menu" source="Pemesan.LihatMenu" target="Koneksi.PemesananCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataTenant" source="Kantin.Orders" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;orders&gt;"/>
+    <HasRelation name="carilogin" source="sayapesan.Login" target="Entity.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;User&gt;"/>
+    <HasRelation name="O" source="Entity.Menu" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="orderPemesan" source="Kantin.OrderDetails" target="Koneksi.OrdersCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataOrder" source="Kantin.OrderDetails" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;orders&gt;"/>
+    <HasRelation name="dataPemesan" source="Pemesan.LihatPesanan" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="dataMenu" source="Kantin.Orders" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="menu" source="Pemesan.LihatPesanan" target="Koneksi.PemesananCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="t" source="Entity.orders" target="Entity.Tenant" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="data" source="Kantin.Orders" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;orders&gt;"/>
+    <HasRelation name="login" source="sayapesan.Login" target="Koneksi.LoginCon" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="koneksi" source="Koneksi.MenuCon" target="Koneksi.config" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dataOrder" source="Pemesan.LihatMenu" target="Entity.Menu" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Menu&gt;"/>
+    <HasRelation name="data" source="Koneksi.OrdersCon" target="Entity.orders" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;orders&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

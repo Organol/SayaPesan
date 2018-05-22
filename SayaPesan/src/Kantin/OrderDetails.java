@@ -5,19 +5,61 @@
  */
 package Kantin;
 
+import Entity.Menu;
+import Entity.orders;
+import Koneksi.MenuCon;
+import Koneksi.OrdersCon;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Cerberus
  */
 public class OrderDetails extends javax.swing.JFrame {
-
+       OrdersCon order = new OrdersCon();
+       List<orders> dataOrder=new ArrayList<>();
+       OrdersCon orderPemesan = new OrdersCon();
+       List<orders> dataPemesan=new ArrayList<>();
+       int aorders;
     /**
      * Creates new form Orders
      */
+     private void load_table(){
+    
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Id Menu");
+        model.addColumn("Nama menu");
+        //model.addColumn("Jenis Menu");
+        TableODetails.setModel(model);
+        dataOrder = order.OrderDetails(aorders);
+            for (int i = 0; i < dataOrder.size(); i++){
+                Object[] ob = new Object[2];
+                ob[0] = dataOrder.get(i).m.getidmenu();
+                ob[1] = dataOrder.get(i).m.getNamaMenu();
+                model.addRow(ob);
+            }
+    }
+     private void load_emblemPemesan(){
+         
+      //  System.out.println(value);
+        dataPemesan = orderPemesan.DetailsPemesan(aorders);
+        namapemesan.setText(dataPemesan.get(0).p.getNama());
+        tempatkirim.setText("Lantai "+dataPemesan.get(0).p.getLantai()+"\n"
+                + " Ruang "+dataPemesan.get(0).p.getRuang());
+     }
     public OrderDetails() {
         initComponents();
+        //System.out.println(aorders);
     }
-
+    public OrderDetails(int value){
+        initComponents();
+        this.aorders = value;
+        load_table();
+        load_emblemPemesan();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,19 +69,17 @@ public class OrderDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TableODetails = new javax.swing.JTable();
         namapemesan = new javax.swing.JLabel();
         tempatkirim = new javax.swing.JLabel();
-        nopesan = new javax.swing.JLabel();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel1.setText("No Pesanan :");
+        setTitle("Details Pemesanan");
 
         jLabel2.setText("Nama Pemesan       :");
 
@@ -47,7 +87,7 @@ public class OrderDetails extends javax.swing.JFrame {
 
         jLabel4.setText("Pesanan ");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableODetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -58,13 +98,18 @@ public class OrderDetails extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TableODetails);
 
         namapemesan.setText("Nama Pemesan");
 
         tempatkirim.setText("Tempat Pengiriman");
 
-        nopesan.setText("No Pesanan");
+        exit.setText("Exit");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,31 +117,27 @@ public class OrderDetails extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(nopesan))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(namapemesan, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tempatkirim))
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(exit)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(namapemesan, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tempatkirim))
+                        .addComponent(jLabel4)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(nopesan))
-                .addGap(27, 27, 27)
+                .addContainerGap()
+                .addComponent(exit)
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(namapemesan))
@@ -104,15 +145,20 @@ public class OrderDetails extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(tempatkirim))
-                .addGap(34, 34, 34)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,14 +197,13 @@ public class OrderDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTable TableODetails;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel namapemesan;
-    private javax.swing.JLabel nopesan;
     private javax.swing.JLabel tempatkirim;
     // End of variables declaration//GEN-END:variables
 }

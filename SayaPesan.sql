@@ -38,11 +38,20 @@ CREATE TABLE user (
 	PRIMARY KEY (idUser)
 ) ENGINE=InnoDB;
 
+
 INSERT INTO user(idUser, username, password, nama_kantin, hak_akses) VALUES
 (1, 'kantin', 'kantin', 'Tenant 1', 'kantin'),
 (2, 'pesan', 'pesan', 'Nandar', 'pemesan'),
 (3, 'kantin1', 'kantin1', 'tenant1', 'kantin');
 
+ALTER TABLE user ADD nama_pemilik varchar(25) NOT NULL;
+ALTER TABLE user MODIFY username varchar(15) NOT NULL;
+ALTER TABLE user MODIFY nama_pemilik varchar(25) NOT NULL;
+
+
+UPDATE user SET nama_pemilik='Nandar' WHERE idUser=1;
+UPDATE user SET nama_pemilik='Majid' WHERE idUser=2;
+UPDATE user SET nama_pemilik='Rahmat' WHERE idUser=3;
 CREATE TABLE  pemesan(
 	idPemesan int(4) NOT NULL AUTO_INCREMENT,
 	namaPemesan varchar(25) NOT NULL,

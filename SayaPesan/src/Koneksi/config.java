@@ -7,6 +7,7 @@
 package Koneksi;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 /**
@@ -16,6 +17,7 @@ import javax.swing.JOptionPane;
 public class config {
     public Connection con;
     public Statement stmt;
+    public ResultSet rss;
     
     public void config(){
         try{
@@ -25,5 +27,24 @@ public class config {
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Koneksi Gagal " +e.getMessage());
         }
+    }
+    public ResultSet getData(String sql){
+        try {
+            config();
+            rss=stmt.executeQuery(sql);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ambil data Gagal");
+        }
+        return rss;
+    }
+    
+    public void saveData(String sql){
+        try {
+            config();
+            stmt.executeUpdate(sql);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Simpan data Gagal"+e);
+        } 
+        
     }
 }

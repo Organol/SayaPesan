@@ -5,12 +5,14 @@
  */
 package Kantin;
 
+import sayapesan.Login;
+
 /**
  *
  * @author Cerberus
  */
 public class KantinMenu extends javax.swing.JFrame {
-
+    int value;
     /**
      * Creates new form KantinMenu
      */
@@ -18,7 +20,11 @@ public class KantinMenu extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-
+    public KantinMenu(int value){
+        initComponents();
+        this.value = value;
+        setLocationRelativeTo(null);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,23 +34,20 @@ public class KantinMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         InputMe = new javax.swing.JButton();
-        SellReports = new javax.swing.JButton();
         Orders = new javax.swing.JButton();
+        LogoutBut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Home Kantin");
+
+        jPanel1.setBackground(new java.awt.Color(250, 245, 250));
 
         InputMe.setText("Input Menu");
         InputMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 InputMeActionPerformed(evt);
-            }
-        });
-
-        SellReports.setText("Selling Report");
-        SellReports.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SellReportsActionPerformed(evt);
             }
         });
 
@@ -55,29 +58,49 @@ public class KantinMenu extends javax.swing.JFrame {
             }
         });
 
+        LogoutBut.setText("Log Out");
+        LogoutBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LogoutButActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(LogoutBut)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(InputMe, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(InputMe, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addComponent(LogoutBut)
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(SellReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(InputMe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(InputMe, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Orders, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(SellReports, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -85,21 +108,23 @@ public class KantinMenu extends javax.swing.JFrame {
 
     private void InputMeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InputMeActionPerformed
         // TODO add your handling code here:
-        new InputMenu().setVisible(true);
+        System.out.println(value);
+        new InputMenu(value).setVisible(true);
         dispose();
     }//GEN-LAST:event_InputMeActionPerformed
 
     private void OrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrdersActionPerformed
         // TODO add your handling code here:
-        new OrderDetails().setVisible(true);
+        System.out.println("orders"+value);
+        new Orders(value).setVisible(true);
         dispose();
     }//GEN-LAST:event_OrdersActionPerformed
 
-    private void SellReportsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SellReportsActionPerformed
+    private void LogoutButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButActionPerformed
         // TODO add your handling code here:
-        new SellingReport().setVisible(true);
+        new Login().setVisible(true);
         dispose();
-    }//GEN-LAST:event_SellReportsActionPerformed
+    }//GEN-LAST:event_LogoutButActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,7 +163,8 @@ public class KantinMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton InputMe;
+    private javax.swing.JButton LogoutBut;
     private javax.swing.JButton Orders;
-    private javax.swing.JButton SellReports;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

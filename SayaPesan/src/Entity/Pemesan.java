@@ -11,21 +11,37 @@ package Entity;
  * @author Angiospermae
  */
 public class Pemesan {
-    int idpemesan;
-    String namapemesan;
+    int idpemesan,lantai,tagihan;
+    String namapemesan,ruang;
     
+    public int getTagihan(){
+        return tagihan;
+    }
+    public void settagihan(int tagihan){
+        this.tagihan =tagihan;
+    }
     public String getNama(){
         return namapemesan;
+    }
+    public void setNama(String nama){
+        this.namapemesan = nama;
     }
     public int getIdpemesan(){
         return idpemesan;
     }
-    public void setNama(String nama){
-        this.namapemesan = nama;
-        
+    public void setIdPemesan(int idPemesan){
+        this.idpemesan = idPemesan;
     }
-    public void setId(int id){
-        this.idpemesan = id;
+    public int getLantai(){
+        return lantai;
     }
-    
+    public void setLantai(int lantai){
+        this.lantai = lantai;
+    }
+    public String getRuang(){
+        return ruang;
+    }
+    public void setRuang(String ruang){
+        this.ruang = ruang;
+    }
 }
